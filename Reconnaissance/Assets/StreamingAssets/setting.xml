@@ -1,0 +1,5 @@
+<content>
+	<ip>ws://192.168.2.152:4649/Chat</ip>
+	<reset>true</reset>	
+	<resetTime>300</resetTime>		
+</content>
