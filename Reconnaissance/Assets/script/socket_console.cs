@@ -16,7 +16,7 @@ public class socket_console : MonoBehaviour
     image_change image_change;
     GameObject ErrorText;
     public static int rader_index;
-
+    int i = 0;
     void Awake()
     {
         //xmlpath
@@ -56,6 +56,7 @@ public class socket_console : MonoBehaviour
         if (_over)
         {
             SceneManager.LoadSceneAsync("success");
+            reciprocal.coolingDown = true;
             _over = false;
         }
         if (Alert)
@@ -115,7 +116,7 @@ public class socket_console : MonoBehaviour
         Debug.Log("Recv: " + e.Data);
         switch (e.Data)
         {
-            case "rader_0":
+            /*case "rader_0":
                 rader_index = 0;
                 break;
             case "rader_1":
@@ -123,11 +124,15 @@ public class socket_console : MonoBehaviour
                 break;
             case "rader_2":
                 rader_index = 2;
-                break;
+                break;*/
             case "complete":
                 _over = true;            
                 break;
             default:
+                if(int.TryParse(e.Data, out i))
+                {
+                    rader_index = int.Parse(e.Data);
+                }
                 break;
         }
     }

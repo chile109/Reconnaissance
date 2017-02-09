@@ -12,7 +12,7 @@ public class reciprocal : MonoBehaviour {
     Image uiElement;
     bool playfinish;
     
-    public bool coolingDown = true;
+    public static bool coolingDown = true;
     public float waitTime = 30.0f;
 
 

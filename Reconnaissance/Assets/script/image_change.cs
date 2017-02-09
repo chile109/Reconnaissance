@@ -11,7 +11,8 @@ public class image_change : MonoBehaviour {
     void Start () {
         
         img = this.GetComponent<Image>();
-        Sprite[] tex = Resources.LoadAll<Sprite>("rader");
+
+        Sprite[] tex = Resources.LoadAll<Sprite>(getFile.fileName);
 
         
         foreach (Sprite spr in tex)
@@ -20,10 +21,10 @@ public class image_change : MonoBehaviour {
         }
 
         // Unload them - no longer needed
-        foreach (Sprite spr in tex)
+        /*foreach (Sprite spr in tex)
         {
             Resources.UnloadAsset(spr);
-        }
+        }*/
     }
 
 
